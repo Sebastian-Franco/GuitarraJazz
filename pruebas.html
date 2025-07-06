@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dibujo simpático en Canvas</title>
+</head>
+<body>
+
+<canvas id="cuadro1" class="cuadrado" width="200" height="300" style="border:1px solid #000000;"></canvas>
+<canvas id="cuadro2" class="cuadrado" width="200" height="300" style="border:1px solid #000000;"></canvas>
+<canvas id="dibujo" width="200" height="300" style="border:1px solid #000000;"></canvas>
+
+<script>
+  let canvas = document.getElementsByClassName("cuadrado");
+  let ctx = [];
+
+  for (let i = 0; i < canvas.length; i++) {
+    ctx[i] = canvas[i].getContext("2d");
+    ctx[i].beginPath();
+    ctx[i].arc(100, 70, 25, 0, Math.PI * 2); // círculo
+    ctx[i].fillStyle = "rgb(251,122,24)";
+    ctx[i].fill();
+  }
+</script>
+
+</body>
+</html>

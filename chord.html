@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Guitar Chords</title>
+
+</head>
+<body>
+  <canvas id="chordCanvas" width="800" height="600"></canvas>
+  <script>
+    const canvas = document.getElementById('chordCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawChord(x, y, positions, colors, pos, val, name) {
+      const stringSpacing = 15;
+      const fretSpacing = 22;
+
+      ctx.fillStyle = 'black';
+      ctx.font = '15px Arial';
+      ctx.fillText(name, x + ((stringSpacing * 5) / 2) - (name.length * 4.5), y - 20);
+
+      if(pos > 0 ){
+        ctx.font = '12px Arial';
+        if(val < 10){
+          ctx.fillText(val, x - 15, y + (fretSpacing * pos - 7));
+        }else{
+          ctx.fillText(val, x - 25, y + (fretSpacing * pos - 7));
+        }
+      }
+      // Dibujar líneas de cuerdas
+      for (let i = 0; i < 6; i++) {
+        ctx.beginPath();
+        ctx.moveTo(x + i * stringSpacing, y);
+        ctx.lineTo(x + i * stringSpacing, y + 5 * fretSpacing);
+        ctx.stroke();
+      }
+
+      // Dibujar trastes
+      for (let i = 0; i < 6; i++) {
+        ctx.beginPath();
+        ctx.moveTo(x, y + i * fretSpacing);
+        ctx.lineTo(x + 5 * stringSpacing, y + i * fretSpacing);
+        ctx.stroke();
+      }
+
+      // Dibujar posiciones de dedos
+      positions.forEach((pos, string) => {
+          switch (colors[string]) {
+            case 1://red
+              ctx.fillStyle = 'RGB(206 26 20)';
+              ctx.strokeStyle = 'RGB(206 26 20)';
+              break;
+            case 3://green
+              ctx.fillStyle = 'rgb(63,127,7)';
+              ctx.strokeStyle = 'rgb(63,127,7)';
+              break;
+            case 5://blue
+              ctx.fillStyle = 'rgb(5,109,162)';
+              ctx.strokeStyle = 'rgb(5,109,162)';
+              break;
+            case 7: //yellow
+              ctx.fillStyle = 'rgb(220,174,29)';
+              ctx.strokeStyle = 'rgb(220,174,29)';
+              break;
+            case 9://orange
+              ctx.fillStyle = 'RGB(81 10 92)';
+              ctx.strokeStyle = 'RGB(81 10 92)';
+              break;
+            case 11:
+              ctx.fillStyle = 'RGB(81 10 92)';
+              ctx.strokeStyle = 'RGB(81 10 92)';
+              break;
+            case 13:
+              ctx.fillStyle = 'RGB(81 10 92)';
+              ctx.strokeStyle = 'RGB(81 10 92)';
+              break;
+            default:
+              ctx.strokeStyle = 'gray';
+              ctx.strokeStyle = 'gray';
+              break;
+          }
+
+        if (pos > 0) {
+          ctx.beginPath();
+          ctx.arc(x + string * stringSpacing, y + pos * fretSpacing - fretSpacing / 2, 6, 0, Math.PI * 2);
+          ctx.fill();
+        } else if (pos === 0) {
+          ctx.beginPath();
+          ctx.arc(x + string * stringSpacing, y - fretSpacing / 2, 5.7, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+        ctx.strokeStyle = 'black';
+      });
+    }
+    drawChord(50, 50, [0, 2, 0, 0, 0, 0],  [1,5,3,7,0,0],0,0,'Em7');
+    drawChord(200, 50, [3, 0, 3, 3, 3, 0], [1,0,7,3,5,0],3,3,'Am7');
+    drawChord(350, 50, [0, 0, 2, 4, 1, 3], [0,0,3,7,1,5],1,1,'Cmaj7');
+    drawChord(500, 50, [2, 0, 2, 3, 4, 0], [1,0,7,3,13,0],2,12,'E713');
+    drawChord(50, 220, [3, 0, 3, 3, 3, 0], [1,0,7,3,5,0],3,10,'Dm7');
+    drawChord(200, 220, [0, 3, 2, 3, 3, 0], [0,1,3,5,9,0],3,3,'C79');
+    drawChord(350, 220, [0, 3, 2, 3, 3, 0], [0,1,3,5,9,0],3,5,'D79');
+    drawChord(500, 220, [0, 3, 2, 3, 3, 0], [0,1,3,5,9,0],3,8,'F79');
+    
+  </script>
+</body>
+</html>

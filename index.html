@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sebastian Franco</title>
+    </head>
+    <style>
+        h1{
+            color:orange;
+            text-align: center;
+            font-size: 38px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        h2{
+            color:orange;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .miniatura {
+            width: 25%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto; /* mantiene proporción */
+        }
+        td {
+            text-align: left;
+            vertical-align: top;
+        }
+        body{
+            background-color: white;
+        }
+    </style>
+    <body>
+        <h1 class="titulo">Sebastian Franco</h1>
+        <p id="resultado" style="text-align: center; font-size: 10px; color: green;">
+        <script>
+            let a = 663;
+            let resultado = (a * 100) / 10000;
+            document.getElementById("resultado").textContent = resultado + "%";
+        </script>
+        </p>
+        <img src="img/picasso_guitar.png" alt="picasso_guitar" class="miniatura" style="width: 400px; height: auto;">
+        <a href="Moonglow.html" style="margin-left:625px;">Moonglow</a>
+        <div style="margin-left: 350px;"><canvas id="chordCanvas" width="800" height="340">sin canvas</canvas></div>
+
+        <!--TABLE 1-->
+        <table border="0px" align="center">
+            <tr>
+                <td colspan="2"><h2>Conceptos:</h2></td>
+            </tr>
+            <tr>
+                <td><b>Intervalos: </b></td><td>Distancia entre notas.</td>
+            </tr>
+            <tr>
+                <td><b>Alteraciones: </b></td>
+                <td>
+                    Modificaciones sobre la altura de una nota.</br>
+                    Ej: Sol# (# -> "sostenido"), Sib, Mib (b -> "bemol")</br>
+                    El # sube 1/2 tono</br>
+                    El b baja 1/2 tono
+                </td>
+            </tr>
+            <tr>
+                <td><b>Melodía: </b></td><td>Sucesión ordenada de notas.</td>
+            </tr>
+            <tr>
+                <td><b>Acorde: </b></td><td>Conjunto de 2 o más notas tocadas al unísono.</td>
+            </tr>
+        </table>        
+        </br>
+        </br>
+        </br>
+        <!--TABLE 2-->
+        <table border="0px" align="center">
+            <tr>
+                <td style="text-align: center;">
+                    <h2>Formación de acordes:</h2>
+                    (Superponiendo terceras se da lugar a las triadas.</br>
+                    Se parte desde la tónica/Raíz.)</br>
+                    Ej: Do su 3era es Mi y la terccera de Mi es Sol.</br>
+                    Por lo tanto de Do mayor su triada se forma por 1°(DO) 3°(MI) y 5°(SOL).</br>
+                </td>
+            </tr>
+        </table>
+        </br>
+        </br>
+        </br> 
+        <!--TABLE 3-->
+        <table border="0px" align="center">
+            <tr>
+                <td colspan="2"><h2>Tipos de Triadas:</h2></td>
+            </tr>
+            <tr>
+                <td><b>Mayor: </b></td><td>(T, 3°, 5°) -> Ej: DO, MI, SOL</td>
+            </tr>
+            <tr>
+                <td><b>Menor: </b></td><td>(T, 3°b, 5°) -> Ej: Do, MIb, SOL</td>
+            </tr>
+            <tr>
+                <td><b>Aumentada: </b></td><td>(T, 3°, 5°#) -> Ej: DO, MI, SOL#</td>
+            </tr>
+            <tr>
+                <td><b>Disminuida: </b></td><td>(T, 3°b, 5°b) -> Ej: DO, MIb, SOLb</td>
+            </tr>
+        </table>
+        </br>
+        </br>
+        </br>        
+        <!--TABLE 4-->
+        <table border="0px" align="center">
+            <tr>
+                <td colspan="2"><h2>Cuatriadas:</h2></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;" >(Se forman agregando una septima a las triadas, superponiendo una 3° a la 5°)</td>
+            </tr>
+            <tr>
+                <td><b>Mayor Septima: </b></td><td>(T, 3°, 5°, 7°) -> Ej: DO, MI, SOL, <b>SI</b> Ej -> Cmaj7</td>
+            </tr>
+            <tr>
+                <td><b>Menor Septima: </b></td><td>(T, 3°b, 5°, 7°b) -> Ej: Do, MIb, SOLb, <b>SI</b> Ej -> C-7</td>
+            </tr>
+            <tr>
+                <td><b>Dominante Septima: </b></td><td>(T, 3°, 5°, 7°b) -> Ej: DO, MI, SOL, <b>SIb</b> Ej -> C7</td>
+            </tr>
+            <tr>
+                <td><b>Semi-disminuida Septima: </b></td><td>(T, 3°b, 5°b, 7°b) -> Ej: DO, MIb, SOLb, <b>SIb</b> Ej -> C-7b5 o Cø7 </td>
+            </tr>
+            <tr>
+                <td><b>Disminuida Septima: </b></td><td>(T, 3°b, 5°b, 7°bb) -> Ej: DO, MIb, SOLb, <b>SIbb</b> (A) Ej -> Cdim7 o C°7 </td>
+            </tr>
+        </table>
+        </br>
+        </br>
+        </br>
+        <!--TABLE 5-->
+        <table border="0px" align="center">
+            <tr>
+                <td style="text-align: center;">
+                    <h2>Escala Mayor de Do:</h2>
+                    Si seguimos el concepto de superposición de 3° y lo aplicamos a cada nota de la escala, obtendremos lo siguiente:</br>
+                    Entre la tónica y la tercera deben haber 2 tonos de distancia</br>
+                    Entre la tónica y la quinta deben haber 3+1/2 tonos de distancia.</br>
+                </td>
+            </tr>
+        </table>
+        </br>
+        </br>
+        </br>
+    </body>
+    <script src="../chordDrawing.js"></script>
+</html>
